@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const BrainJs = require("brain.js");
 const natural = require("natural");
-const data = require('../data/trainingData');
+const dataSet = require('../data/trainingData');
 
 //Neural Network Training
 const buildWordDictionary = (trainingData) => {
@@ -14,7 +14,7 @@ const buildWordDictionary = (trainingData) => {
     return flattenedArray.filter((item, pos, self) => self.indexOf(item) == pos)
 }
 
-const dictionary = buildWordDictionary(data)
+const dictionary = buildWordDictionary(dataSet)
 
 const encode = (phrase) => {
     const phraseTokens = phrase.split(' ');
@@ -22,7 +22,7 @@ const encode = (phrase) => {
     return encodedPhrase;
 }
 
-const encodedTrainingSet = TrainingSet.map(dataSet => {
+const encodedTrainingSet = dataSet.map(dataSet => {
     const encodedValue = encode(dataSet.phrase)
     return { input: encodedValue, output: dataSet.result }
 })
