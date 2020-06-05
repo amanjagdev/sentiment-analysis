@@ -1,0 +1,13 @@
+{
+  "name": "sentiment-analysis",
+  "version": "1.0.0",
+  "description": "A sentiment analysis app made with nodejs",
+  "main": "server.js",
+  "repository": "https://github.com/amanjagdev/sentiment-analysis.git",
+  "author": "Aman Jagdev",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
