@@ -2,25 +2,24 @@ const express = require("express");
 const router = express.Router();
 const BrainJs = require("brain.js");
 const natural = require("natural");
-const TrainingSet = require('../data/trainingData');
+const data = require('../data/trainingData');
 
-function buildWordDictionary(trainingData) {
+//Neural Network Training
+const buildWordDictionary = (trainingData) => {
     const tokenisedArray = trainingData.map(item => {
-        const tokens = item.phrase.split(' ')
-        return tokens.map(token => natural.PorterStemmer.stem(token))
-    })
-
+        const tokens = item.phrase.split(' ');
+        return tokens.map(token => natural.PorterStemmer.stem(token));
+    });
     const flattenedArray = [].concat.apply([], tokenisedArray)
     return flattenedArray.filter((item, pos, self) => self.indexOf(item) == pos)
 }
 
-const dictionary = buildWordDictionary(TrainingSet)
+const dictionary = buildWordDictionary(data)
 
-function encode(phrase) {
-    const phraseTokens = phrase.split(' ')
-    const encodedPhrase = dictionary.map(word => phraseTokens.includes(word) ? 1 : 0)
-
-    return encodedPhrase
+const encode = (phrase) => {
+    const phraseTokens = phrase.split(' ');
+    const encodedPhrase = dictionary.map(word => phraseTokens.includes(word) ? 1 : 0);
+    return encodedPhrase;
 }
 
 const encodedTrainingSet = TrainingSet.map(dataSet => {
@@ -28,12 +27,8 @@ const encodedTrainingSet = TrainingSet.map(dataSet => {
     return { input: encodedValue, output: dataSet.result }
 })
 
-
 const network = new BrainJs.NeuralNetwork()
 network.train(encodedTrainingSet)
-
-const encoded = encode("Im so happy to have cae")
-
 
 
 /*
@@ -41,10 +36,12 @@ const encoded = encode("Im so happy to have cae")
 @desc:      To analyse whether the given sentence is possitive or not
 */
 router.get('/', (req, res) => {
-    
-    let result = network.run(encoded);
-    result = JSON.stringify(result);
-    res.send("Analysed" + result);
+    let sentence = req.params.input;
+    const encoded = encode(sentence);
+
+    //Passing through network
+    const result = network.run(encoded);
+    res.send(result);
 });
 
 
