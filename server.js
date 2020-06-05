@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
 //Initialising Application
 const app = express();
@@ -10,14 +11,14 @@ const port =  process.env.PORT || 5000;
 //Fixing Cors
 app.use(cors());
 
-
-/*
-    @route: /
-    @desc: Home Route
-*/
+//Importing Apis
+const analysisApi = require("./api/analysis");
+ 
 app.get('/',(req,res) => {
     res.send("Welcome to sentiment analysis")
 });
+
+app.use('/api/analyse',analysisApi);
 
 //Server Setup
 app.listen(port, () => {

@@ -6,8 +6,17 @@
   "repository": "https://github.com/amanjagdev/sentiment-analysis.git",
   "author": "Aman Jagdev",
   "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
   "dependencies": {
+    "brain.js": "^2.0.0-beta.1",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
