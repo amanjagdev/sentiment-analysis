@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 require("dotenv").config();
 
 //Initialising Application
@@ -10,6 +11,10 @@ const port =  process.env.PORT || 5000;
 
 //Fixing Cors
 app.use(cors());
+
+// BODY PARSER MIDDLEWARE IN USE
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Importing Apis
 const analysisApi = require("./api/analysis");

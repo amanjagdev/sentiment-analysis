@@ -35,13 +35,16 @@ network.train(encodedTrainingSet)
 @route:     /api/analyse/
 @desc:      To analyse whether the given sentence is possitive or not
 */
-router.get('/', (req, res) => {
-    let sentence = req.params.input;
+router.post('/', (req, res) => {
+    
+    let sentence = req.body.inputStr;
+    
     const encoded = encode(sentence);
 
     //Passing through network
     const result = network.run(encoded);
     res.send(result);
+    
 });
 
 
