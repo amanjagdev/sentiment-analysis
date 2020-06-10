@@ -23,6 +23,6 @@ Production
 
 ## Use Directions
 
-### POST api/alalyse
+### POST api/analyse
 
 { "inputStr": "xxxx" }

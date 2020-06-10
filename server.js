@@ -19,11 +19,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Importing Apis
 const analysisApi = require("./api/analysis");
  
-app.get('/',(req,res) => {
-    res.send("Welcome to sentiment analysis")
-});
-
 app.use('/api/analyse',analysisApi);
+
+//Client Setup
+app.use('/css',express.static(__dirname + '/public/css'))
+app.use('/js',express.static(__dirname + '/public/js'))
+app.get('/',(req,res) => {
+    res.sendFile(__dirname+'/public/index.html');
+});
 
 //Server Setup
 app.listen(port, () => {
