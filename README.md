@@ -4,7 +4,7 @@
 Do sentiment Aanlysis using JS
 Simple Machine Learning Project to do the sentiment analysis
 - Backend API : Completed
-- Frontend  : Yet to be Completed
+- Frontend  : Completed
 ---
 
 ## Ouick Start
@@ -21,7 +21,7 @@ Production
 
 ---
 
-## Use Directions
+## Use Directions for Backend-api
 
 ### POST api/analyse
 
