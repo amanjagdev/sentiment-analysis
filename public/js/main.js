@@ -23,9 +23,9 @@ submitBtn.addEventListener('click', () => {
     postData('/api/analyse/', data)
         .then(data => {
             if (data.positive > data.negative) {
-                resultOut.innerHTML = "Positive"
+                resultOut.innerHTML = "<div class='green'>POSITIVE</div>"
             } else {
-                resultOut.innerHTML = "Negative"
+                resultOut.innerHTML = "<div class='red'>NEGATIVE</div>"
             }
         });
 });

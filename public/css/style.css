@@ -1,3 +1,192 @@
-body{
-    background: #aaa;
+body {
+  background: #b5e0ff;
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
 }
+
+body .header {
+  margin: 0;
+  background: #e7f5ff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+body .header h1 {
+  font-weight: 800;
+  text-align: center;
+  color: #5690ff;
+  margin: 0;
+}
+
+body .main {
+  color: #323232;
+  margin: 7% 20%;
+}
+
+body .main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  background: #e7f5ff;
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 29px;
+}
+
+body .main .container .desc {
+  padding: 50px;
+}
+
+body .main .container .interaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px;
+}
+
+body .main .container .interaction .input-title {
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+body .main .container .interaction .result h4 {
+  font-weight: 600;
+  font-size: 25px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .main .container .interaction .result h4 .final-result .green {
+  margin-left: 5px;
+  color: #00a510;
+}
+
+body .main .container .interaction .result h4 .final-result .red {
+  margin-left: 5px;
+  color: #c70000;
+}
+
+body .main .container .interaction input {
+  padding: 15px;
+  margin-bottom: 20px !important;
+  outline: none;
+  background: #ffffff;
+  font-size: 25px;
+  border: 1px solid #5690ff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 18px;
+}
+
+body .main .container .interaction #main-button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: white;
+  background: #5690ff;
+  border-radius: 50px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  margin-bottom: 30px;
+}
+
+body .footer {
+  background: #e7f5ff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .footer h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .footer h4 a {
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  text-decoration: none;
+  color: #5690ff;
+}
+
+body .footer a {
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  text-decoration: none;
+}
+
+body .footer a button {
+  color: white;
+  background: #5690ff;
+  border-radius: 123px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  padding: 5px 13px;
+}
+
+@media only screen and (max-width: 1024px) {
+  body .main {
+    margin: 40px 20px;
+  }
+  body .main .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .main .container .desc {
+    padding-bottom: 0;
+  }
+  body .main .container .interaction .input-title {
+    margin-bottom: 10px;
+  }
+  body .main .container .interaction button {
+    margin-bottom: 10px;
+  }
+  body .main .container .interaction .result {
+    margin-top: 30px;
+  }
+  body .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .footer button {
+    margin-top: 0px !important;
+    margin-bottom: 20px !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
